@@ -22,7 +22,7 @@ namespace AGRIBD
         /// Obtiene la cadena de conexión para SQL Server.
         /// </summary>
         /// <returns>Cadena de conexión a SQL Server.</returns>
-
+        //YO
         /// <summary>
         /// Ejecuta un comando SQL en SQL Server.
         /// </summary>
