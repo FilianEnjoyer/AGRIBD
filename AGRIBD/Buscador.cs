@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AGRIBD
@@ -17,7 +18,10 @@ namespace AGRIBD
         public Buscador()
         {
             InitializeComponent();
+            
         }
+        
+        
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -99,6 +103,32 @@ namespace AGRIBD
             {
                 MessageBox.Show("Error en el sistema: " + Ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OcultarDataGrids();
+            string consultaSQL = "SELECT Id FROM Productores";
+
+            var (ds, comando) = SQLSERVER.EjecutarComandos(consultaSQL, "Productores");
+            var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Productores");
+            this.Controls.Add(lbl);
+            this.Controls.Add(dgv);
+            dgv.Refresh();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OcultarDataGrids();
+            string consultaSQL = "SELECT Id FROM Cultivos";
+
+            var (ds, comando) = SQLSERVER.EjecutarComandos(consultaSQL, "Cultivos");
+            var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
+            this.Controls.Add(lbl);
+            this.Controls.Add(dgv);
+            dgv.Refresh();
+
         }
     }
 

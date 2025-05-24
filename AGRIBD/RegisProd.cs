@@ -42,7 +42,7 @@ namespace AGRIBD
             //Boton para añadir
             try
             {
-                if (string.IsNullOrWhiteSpace(textBox2.Text) && (string.IsNullOrWhiteSpace(textBox3.Text)) && (string.IsNullOrWhiteSpace(textBox4.Text)))
+                if (!string.IsNullOrWhiteSpace(textBox2.Text) && (!string.IsNullOrWhiteSpace(textBox3.Text)) && (!string.IsNullOrWhiteSpace(textBox4.Text)))
                 {
                     OcultarDataGrids();
                     // Ejecución del comando para insertar datos
