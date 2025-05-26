@@ -48,11 +48,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.papaChkbox = new System.Windows.Forms.CheckBox();
+            this.zanahoriaChkbox = new System.Windows.Forms.CheckBox();
+            this.tomateChkBox = new System.Windows.Forms.CheckBox();
+            this.lechugaChkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(531, 49);
+            this.button1.Location = new System.Drawing.Point(695, 49);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
             this.button1.TabIndex = 20;
@@ -200,7 +204,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(531, 84);
+            this.button2.Location = new System.Drawing.Point(695, 84);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 23);
             this.button2.TabIndex = 33;
@@ -210,7 +214,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(531, 125);
+            this.button3.Location = new System.Drawing.Point(695, 125);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 23);
             this.button3.TabIndex = 34;
@@ -218,11 +222,56 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // papaChkbox
+            // 
+            this.papaChkbox.AutoSize = true;
+            this.papaChkbox.Location = new System.Drawing.Point(546, 64);
+            this.papaChkbox.Name = "papaChkbox";
+            this.papaChkbox.Size = new System.Drawing.Size(62, 20);
+            this.papaChkbox.TabIndex = 35;
+            this.papaChkbox.Text = "Papa";
+            this.papaChkbox.UseVisualStyleBackColor = true;
+            // 
+            // zanahoriaChkbox
+            // 
+            this.zanahoriaChkbox.AutoSize = true;
+            this.zanahoriaChkbox.Location = new System.Drawing.Point(546, 91);
+            this.zanahoriaChkbox.Name = "zanahoriaChkbox";
+            this.zanahoriaChkbox.Size = new System.Drawing.Size(90, 20);
+            this.zanahoriaChkbox.TabIndex = 36;
+            this.zanahoriaChkbox.Text = "Zanahoria";
+            this.zanahoriaChkbox.UseVisualStyleBackColor = true;
+            // 
+            // tomateChkBox
+            // 
+            this.tomateChkBox.AutoSize = true;
+            this.tomateChkBox.Location = new System.Drawing.Point(546, 118);
+            this.tomateChkBox.Name = "tomateChkBox";
+            this.tomateChkBox.Size = new System.Drawing.Size(76, 20);
+            this.tomateChkBox.TabIndex = 37;
+            this.tomateChkBox.Text = "Tomate";
+            this.tomateChkBox.UseVisualStyleBackColor = true;
+            // 
+            // lechugaChkbox
+            // 
+            this.lechugaChkbox.AutoSize = true;
+            this.lechugaChkbox.Location = new System.Drawing.Point(546, 145);
+            this.lechugaChkbox.Name = "lechugaChkbox";
+            this.lechugaChkbox.Size = new System.Drawing.Size(81, 20);
+            this.lechugaChkbox.TabIndex = 38;
+            this.lechugaChkbox.Text = "Lechuga";
+            this.lechugaChkbox.UseVisualStyleBackColor = true;
+            this.lechugaChkbox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
             // Buscador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 485);
+            this.Controls.Add(this.lechugaChkbox);
+            this.Controls.Add(this.tomateChkBox);
+            this.Controls.Add(this.zanahoriaChkbox);
+            this.Controls.Add(this.papaChkbox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
@@ -271,5 +320,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox papaChkbox;
+        private System.Windows.Forms.CheckBox zanahoriaChkbox;
+        private System.Windows.Forms.CheckBox tomateChkBox;
+        private System.Windows.Forms.CheckBox lechugaChkbox;
     }
 }
