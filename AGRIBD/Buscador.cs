@@ -175,7 +175,6 @@ namespace AGRIBD
                 {
 
 
-                    // Crear y mostrar DataGridView con su Label
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);
@@ -187,7 +186,6 @@ namespace AGRIBD
             }
             else
             {
-                // Si se desmarca, ocultar grids
                 OcultarDataGrids();
             }
 
@@ -212,7 +210,6 @@ namespace AGRIBD
                 {
                     
 
-                    // Crear y mostrar DataGridView con su Label
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);
@@ -224,7 +221,6 @@ namespace AGRIBD
             }
             else
             {
-                // Si se desmarca, ocultar grids
                 OcultarDataGrids();
             }
         }
@@ -248,7 +244,6 @@ namespace AGRIBD
                 {
 
 
-                    // Crear y mostrar DataGridView con su Label
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);
@@ -260,7 +255,6 @@ namespace AGRIBD
             }
             else
             {
-                // Si se desmarca, ocultar grids
                 OcultarDataGrids();
             }
         }
