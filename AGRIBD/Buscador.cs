@@ -135,6 +135,169 @@ namespace AGRIBD
         {
 
         }
+
+        private void papaChkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+
+
+
+        }
+
+        private void zanahoriaChkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tomateChkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        private void papaChkbox_Click(object sender, EventArgs e)
+        {
+            zanahoriaChkbox.Checked = false;
+            tomateChkBox.Checked = false;
+            lechugaChkbox.Checked = false;
+            if (papaChkbox.Checked)
+            {
+
+
+                OcultarDataGrids();
+
+                string consulta = $"SELECT * FROM Cultivos WHERE Plantacion = '{papaChkbox.Text}'";
+
+                var ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+
+
+                    // Crear y mostrar DataGridView con su Label
+                    var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
+                    this.Controls.Add(lbl);
+                    this.Controls.Add(dgv);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados.");
+                }
+            }
+            else
+            {
+                // Si se desmarca, ocultar grids
+                OcultarDataGrids();
+            }
+
+        }
+
+        private void zanahoriaChkbox_Click(object sender, EventArgs e)
+        {
+            papaChkbox.Checked = false;
+            lechugaChkbox.Checked = false;
+            tomateChkBox.Checked = false;
+            if (zanahoriaChkbox.Checked)
+            {
+                
+
+                OcultarDataGrids();
+
+                string consulta = $"SELECT * FROM Cultivos WHERE Plantacion = '{zanahoriaChkbox.Text}'";
+
+                var ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    
+
+                    // Crear y mostrar DataGridView con su Label
+                    var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
+                    this.Controls.Add(lbl);
+                    this.Controls.Add(dgv);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados.");
+                }
+            }
+            else
+            {
+                // Si se desmarca, ocultar grids
+                OcultarDataGrids();
+            }
+        }
+
+        private void tomateChkBox_Click(object sender, EventArgs e)
+        {
+            papaChkbox.Checked = false;
+            lechugaChkbox.Checked = false;
+            zanahoriaChkbox.Checked = false;
+            if (tomateChkBox.Checked)
+            {
+
+
+                OcultarDataGrids();
+
+                string consulta = $"SELECT * FROM Cultivos WHERE Plantacion = '{tomateChkBox.Text}'";
+
+                var ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+
+
+                    // Crear y mostrar DataGridView con su Label
+                    var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
+                    this.Controls.Add(lbl);
+                    this.Controls.Add(dgv);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados.");
+                }
+            }
+            else
+            {
+                // Si se desmarca, ocultar grids
+                OcultarDataGrids();
+            }
+        }
+
+        private void lechugaChkbox_Click(object sender, EventArgs e)
+        {
+            papaChkbox.Checked = false;
+            tomateChkBox.Checked = false;
+            zanahoriaChkbox.Checked = false;
+            if (lechugaChkbox.Checked)
+            {
+
+
+                OcultarDataGrids();
+
+                string consulta = $"SELECT * FROM Cultivos WHERE Plantacion = '{lechugaChkbox.Text}'";
+
+                var ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
+
+                if (ds != null && ds.Tables.Count > 0)
+                {
+
+
+                    var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
+                    this.Controls.Add(lbl);
+                    this.Controls.Add(dgv);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron resultados.");
+                }
+            }
+            else
+            {
+                OcultarDataGrids();
+            }
+        }
     }
 
 }

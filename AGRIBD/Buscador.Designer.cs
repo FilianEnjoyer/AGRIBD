@@ -231,6 +231,8 @@
             this.papaChkbox.TabIndex = 35;
             this.papaChkbox.Text = "Papa";
             this.papaChkbox.UseVisualStyleBackColor = true;
+            this.papaChkbox.CheckedChanged += new System.EventHandler(this.papaChkbox_CheckedChanged);
+            this.papaChkbox.Click += new System.EventHandler(this.papaChkbox_Click);
             // 
             // zanahoriaChkbox
             // 
@@ -241,6 +243,8 @@
             this.zanahoriaChkbox.TabIndex = 36;
             this.zanahoriaChkbox.Text = "Zanahoria";
             this.zanahoriaChkbox.UseVisualStyleBackColor = true;
+            this.zanahoriaChkbox.CheckedChanged += new System.EventHandler(this.zanahoriaChkbox_CheckedChanged);
+            this.zanahoriaChkbox.Click += new System.EventHandler(this.zanahoriaChkbox_Click);
             // 
             // tomateChkBox
             // 
@@ -251,6 +255,8 @@
             this.tomateChkBox.TabIndex = 37;
             this.tomateChkBox.Text = "Tomate";
             this.tomateChkBox.UseVisualStyleBackColor = true;
+            this.tomateChkBox.CheckedChanged += new System.EventHandler(this.tomateChkBox_CheckedChanged);
+            this.tomateChkBox.Click += new System.EventHandler(this.tomateChkBox_Click);
             // 
             // lechugaChkbox
             // 
@@ -262,6 +268,7 @@
             this.lechugaChkbox.Text = "Lechuga";
             this.lechugaChkbox.UseVisualStyleBackColor = true;
             this.lechugaChkbox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.lechugaChkbox.Click += new System.EventHandler(this.lechugaChkbox_Click);
             // 
             // Buscador
             // 
