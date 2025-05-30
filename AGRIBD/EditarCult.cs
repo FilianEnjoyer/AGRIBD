@@ -45,17 +45,14 @@ namespace AGRIBD
                         return;
                     }
 
-                    // Construcción de la consulta SQL de actualización
                     string consultaSQL = "UPDATE Cultivos SET " +
                                          "nombre = '" + textBox2.Text + "', " +
                                          "plantacion = '" + textBox3.Text + "', " +
                                          "tamaño = '" + textBox4.Text + "' " +
                                          "WHERE id = " + textBox1.Text;
 
-                    // Ejecución del comando usando EjecutarComandos
                     var (ds, comando) = SQLSERVER.EjecutarComandos(consultaSQL, "Cultivos");
                     MessageBox.Show("Cultivo Editado");
-                    // Mostrar resultados actualizados
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);

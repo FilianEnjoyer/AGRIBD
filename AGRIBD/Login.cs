@@ -22,16 +22,15 @@ namespace AGRIBD
         public event LoginSuccessHandler OnLoginSuccess;
         private void button1_Click(object sender, EventArgs e)
         {
-            //boton Inicio
             string user = textBox1.Text;
             string pass = textBox2.Text;
 
-            if (user == "admin" && pass == "carpincho")
+            if (user == "admin" && pass == "1234")
             {
                 OnLoginSuccess?.Invoke(user, "Admin");
                 this.Close();
             }
-            else if (user == "cliente" && pass == "invisible")
+            else if (user == "cliente" && pass == "4321")
             {
                 OnLoginSuccess?.Invoke(user, "Cliente");
                 this.Close();

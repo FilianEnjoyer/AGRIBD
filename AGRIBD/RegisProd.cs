@@ -39,21 +39,16 @@ namespace AGRIBD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Boton para añadir
             try
             {
                 if (!string.IsNullOrWhiteSpace(textBox2.Text) && (!string.IsNullOrWhiteSpace(textBox3.Text)) && (!string.IsNullOrWhiteSpace(textBox4.Text)))
                 {
                     OcultarDataGrids();
-                    // Ejecución del comando para insertar datos
                     string consultaSQL = "INSERT INTO Productores (nombre, email, direccion) " +
                                      "VALUES ('" + textBox2.Text + "', '" +
                                      textBox3.Text + "', '" + textBox4.Text + "')";
 
-                    // Ejecución de la consulta usando EjecutarComandos
                     var (ds, comando) = SQLSERVER.EjecutarComandos(consultaSQL, "Productores");
-
-                    // Mostrar los resultados en el DataGridView
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Productores");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);
@@ -63,7 +58,6 @@ namespace AGRIBD
                 {
                     MessageBox.Show("Todos los espacios deben estar llenos");
                 }
-            
             }
             catch (SqlException Ex)
             {

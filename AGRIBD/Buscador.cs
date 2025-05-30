@@ -43,65 +43,50 @@ namespace AGRIBD
             {
                 if (!string.IsNullOrWhiteSpace(textbox1.Text))
                 {
-                    // Ejecución del comando para buscar datos
-                    var (ds, comando) = SQLSERVER.EjecutarComandos($"SELECT * FROM Productores WHERE Nombre = '{textbox1.Text}'", "Productores");
-                    SqlDataReader reader = comando.ExecuteReader();
+                    string consulta = $"SELECT * FROM Productores WHERE Nombre = '{textbox1.Text}'";
+                    DataSet ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Productores");
 
-                    if (reader.Read())
+                    if (ds.Tables["Productores"].Rows.Count > 0)
                     {
                         DataRow row = ds.Tables["Productores"].Rows[0];
                         textBox3.Text = row["Id"].ToString();
                         textBox4.Text = row["Email"].ToString();
                         textBox5.Text = row["Direccion"].ToString();
                         MessageBox.Show("Productor encontrado");
-
-
                     }
                     else
                     {
                         MessageBox.Show("Productor no encontrado");
                     }
-                    
                 }
+
                 if (!string.IsNullOrWhiteSpace(textBox2.Text))
                 {
                     OcultarDataGrids();
-                    // Ejecución del comando para buscar datos
-                    var (ds, comando) = SQLSERVER.EjecutarComandos($"SELECT * FROM Cultivos WHERE Nombre = '{textBox2.Text}'", "Cultivos");
-                    SqlDataReader reader = comando.ExecuteReader();
+                    string consulta = $"SELECT * FROM Cultivos WHERE Nombre = '{textBox2.Text}'";
+                    DataSet ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
 
-                    if (reader.Read())
+                    if (ds.Tables["Cultivos"].Rows.Count > 0)
                     {
                         DataRow row = ds.Tables["Cultivos"].Rows[0];
                         textBox6.Text = row["Id"].ToString();
                         textBox7.Text = row["Plantacion"].ToString();
                         textBox8.Text = row["Tamaño"].ToString();
-                        MessageBox.Show("Productor encontrado");
-
-
+                        MessageBox.Show("Cultivo encontrado");
                     }
                     else
                     {
                         MessageBox.Show("Cultivo no encontrado.");
                     }
-
-
                 }
-                else if (!string.IsNullOrWhiteSpace(textbox1.Text) && !string.IsNullOrWhiteSpace(textBox2.Text))
+                else if (string.IsNullOrWhiteSpace(textbox1.Text) && string.IsNullOrWhiteSpace(textBox2.Text))
                 {
-                    {
-                        MessageBox.Show("Ingrese algun nombre");
-                    }
+                    MessageBox.Show("Ingrese algún nombre");
                 }
-
             }
-            catch (SqlException Ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(Ex.Message);
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show("Error en el sistema: " + Ex.Message);
+                MessageBox.Show("Error en el sistema: " + ex.Message);
             }
         }
 
@@ -163,18 +148,11 @@ namespace AGRIBD
             lechugaChkbox.Checked = false;
             if (papaChkbox.Checked)
             {
-
-
                 OcultarDataGrids();
-
                 string consulta = $"SELECT * FROM Cultivos WHERE Plantacion = '{papaChkbox.Text}'";
-
                 var ds = SQLSERVER.EjecutarConsultaSelect(consulta, "Cultivos");
-
                 if (ds != null && ds.Tables.Count > 0)
                 {
-
-
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                     this.Controls.Add(lbl);
                     this.Controls.Add(dgv);
@@ -188,7 +166,6 @@ namespace AGRIBD
             {
                 OcultarDataGrids();
             }
-
         }
 
         private void zanahoriaChkbox_Click(object sender, EventArgs e)

@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 485);
+            this.ClientSize = new System.Drawing.Size(1061, 504);
             this.Controls.Add(this.lechugaChkbox);
             this.Controls.Add(this.tomateChkBox);
             this.Controls.Add(this.zanahoriaChkbox);

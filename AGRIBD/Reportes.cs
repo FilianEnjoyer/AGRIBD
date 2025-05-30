@@ -58,8 +58,8 @@ namespace AGRIBD
                         this.Controls.Remove(ctrl);
                 }
 
-                this.Controls.Add(controles.Item1); // Label
-                this.Controls.Add(controles.Item2); // DataGridView
+                this.Controls.Add(controles.Item1); 
+                this.Controls.Add(controles.Item2); 
 
             }
         }

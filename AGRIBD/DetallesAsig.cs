@@ -21,37 +21,28 @@ namespace AGRIBD
         ClaseSQLSERVER SQLSERVER = new ClaseSQLSERVER();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox2.Text) && (string.IsNullOrWhiteSpace(textBox1.Text)))
+            if (!string.IsNullOrWhiteSpace(textBox2.Text) && (!string.IsNullOrWhiteSpace(textBox1.Text)))
             {
                 if (int.TryParse(textBox1.Text, out int idprod) && int.TryParse(textBox2.Text, out int idcult))
                 {
-                    // Verificar si existe el Productor
                     string consultaProductor = $"SELECT COUNT(*) FROM Productores WHERE Id = {idprod}";
                     int countProductor = SQLSERVER.ObtenerCantidad(consultaProductor);
-
                     if (countProductor == 0)
                     {
                         MessageBox.Show("ID de Productor inválido.", "Error");
                         return;
                     }
-
-                    // Verificar si existe el Cultivo
                     string consultaCultivo = $"SELECT COUNT(*) FROM Cultivos WHERE Id = {idcult}";
                     int countCultivo = SQLSERVER.ObtenerCantidad(consultaCultivo);
-
                     if (countCultivo == 0)
                     {
                         MessageBox.Show("ID de Cultivo inválido.", "Error");
                         return;
                     }
-
-                    // Insertar solo si ambos existen
                     string insertQuery = $@"
             INSERT INTO Detalles (Id_productor, Id_cultivo)
             VALUES ({idprod}, {idcult});";
-
                     var resultado = SQLSERVER.EjecutarComandos(insertQuery, "Detalles");
-
                     if (resultado.Item2 != null)
                     {
                         MessageBox.Show("Cultivo asignado correctamente al productor.", "Éxito");

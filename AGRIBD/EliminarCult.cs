@@ -34,29 +34,19 @@ namespace AGRIBD
         {
             try
             {
-                
                 OcultarDataGrids();
-
                 if (string.IsNullOrWhiteSpace(textBox1.Text))
                 {
                     MessageBox.Show("Ingrese el ID del cultivo a eliminar.");
                     return;
                 }
-
-                // Construcción de la consulta SQL para eliminar
                 string consultaSQL = "DELETE FROM Cultivos WHERE id = " + textBox1.Text;
-
-                // Ejecución del comando usando EjecutarComandos
                 var (ds, comando) = SQLSERVER.EjecutarComandos(consultaSQL, "Cultivos");
                     MessageBox.Show("Cultivo Eliminado");
-
-                    // Mostrar los datos restantes en el DataGridView
                     var (lbl, dgv) = SQLSERVER.CrearYMostrarDataGridView(ds, "Cultivos");
                 this.Controls.Add(lbl);
                 this.Controls.Add(dgv);
                 dgv.Refresh();
-                
-                
             }
             catch (SqlException ex)
             {

@@ -18,15 +18,7 @@ namespace AGRIBD
         private string UsuarioId = "sa";
         private string Password = "2050";
 
-        /// <summary>
-        /// Obtiene la cadena de conexión para SQL Server.
-        /// </summary>
-        /// <returns>Cadena de conexión a SQL Server.</returns>
-        //YO
-        /// <summary>
-        /// Ejecuta un comando SQL en SQL Server.
-        /// </summary>
-        /// <param name="ConsultaSQL">Consulta SQL a ejecutar.</param>
+      
         public (DataSet, SqlCommand) EjecutarComandos(string ConsultaSQL, string NomTabla)
         {
             try
@@ -64,11 +56,6 @@ namespace AGRIBD
             }
         }
 
-        /// <summary>
-        /// Obtiene datos de SQL Server según la consulta dada.
-        /// </summary>
-        /// <param name="consulta">Consulta SQL para obtener datos.</param>
-        /// <returns>DataTable con los resultados de la consulta.</returns>
 
         public DataSet llenarGrids(string NomTabla)
         {
